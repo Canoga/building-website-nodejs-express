@@ -7,10 +7,14 @@
     "start": "node server.js",
     "dev": "nodemon --ignore feedback.json server.js"
   },
+  "emmet.includeLanguages": {
+    "ejs": "html"
+},
   "keywords": [],
   "author": "Daniel Khan",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {
