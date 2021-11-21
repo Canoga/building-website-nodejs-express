@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 
 const router = express.Router();
@@ -12,8 +13,14 @@ module.exports = params => {
 
   router.get('/:shortname', async (request, response) => {
     const speaker = await speakersService.getSpeaker(request.params.shortname);
-    console.log(speaker);
-    response.render('layout', { pageTitle: 'Speakers', template: 'speakers-detail', speaker });
+    const speakerArtwork = await speakersService.getArtworkForSpeaker(speaker.shortname);
+
+    const totalSpeaker = {
+      speaker,
+      artworks: speakerArtwork,
+    };
+
+    response.render('layout', { pageTitle: 'Speakers', template: 'speakers-detail', totalSpeaker });
   });
 
   return router;

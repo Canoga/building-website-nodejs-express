@@ -1,0 +1,15 @@
+<article class="sidebar">
+    <h1 class="sidebar-title">Artwork on display</h1>
+    <p class="sidebar-body">
+      While you attend our conference, head over to our gallery where you can check out some of
+      the work from our speakers. 
+      <div class="pixgrid clearfix">
+            <% totalSpeaker.artworks.forEach(artworkPiece => { %>
+                <img src="../images/artwork/<%= artworkPiece %> " alt="Artwork 0" />
+            <% }) %>
+        </div>
+
+
+    </p>
+
+  </article>
